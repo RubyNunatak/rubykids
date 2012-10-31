@@ -1,0 +1,23 @@
+begin
+  require 'zeitansage'
+rescue LoadError
+  require 'rubygems'
+  require 'zeitansage'
+end
+
+anreden = [
+  "Hallo Livia!", 
+  "Hi Livia!",
+  "Liebe Livia!",
+  "Oh, meine Prinzessin!",
+  "Wozu willst du das schon wieder wissen?",
+  "Sollte ich dir lieber eine Armbanduhr schenken?",
+  "Ich sag nichts ohne meinen Rubyinterpreter!",
+]
+
+muster = "Es ist %H:%M Uhr."
+
+z = Zeitansage.new(anreden, muster)
+puts z.es_ist
+
+

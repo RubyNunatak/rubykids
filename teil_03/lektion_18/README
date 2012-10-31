@@ -1,0 +1,39 @@
+= wie_spaet -- Ein Ruby Programm zur Zeitansage
+
+Dieses Softwarepacket enthält 'wie_spaet', ein einfaches 
+Rubyprogramm, dass die aktuelle Uhrzeit ausgibt.
+
+wie_spaet hat die folgenden Features:
+
+* Anreden: Die Zeitansage kann mit einer Liste von Anreden initialisiert
+  werden. Aus der Liste wird bei jedem Aufruf mehr oder wenig zufällig
+  eine Anrede ausgewählt. 
+
+* Zeitausgabe: Das Ausgabeformat der Zeitansage kann ein mit den
+  üblichen Platzhaltern für die Zeit- und Datumswerte versehene
+  Zeichenkette sein.
+
+
+== Download
+
+Die aktuelle Version von 'wie_spaet' gibt es unter
+
+* http://www.rubykids.de
+
+== Installation
+
+=== GEM Installation
+
+wie_spaet kann als GEM gedownloaded werden und wird anschließend
+mit folgendem Befehl installiert (je nach Version):
+
+   gem install wie_spaet-0.0.1.gem
+
+== Verwendung von wie_spaet
+
+=== Direkte Verwendung 
+
+Ist wie_spaet installiert, kann es einfach auf der 
+Kommandozeile aufgerufen werden:
+
+  C:\> wie_spaet
