@@ -99,10 +99,10 @@ def lies_ein_zeichen
     # Wenn Fehler, dann wohl kein Microsoft Windows da draußen.
     state = `stty -g`
     begin
-      system = "stty raw -echo cbreak"
+      system("stty raw -echo cbreak")
       STDIN.getc.chr
     ensure
-      system "stty #{state}"
+      system("stty #{state}")
     end
   end
 end

@@ -2,8 +2,12 @@
 # Alle Rechte vorbehalten.
 # lektion_07.rb
 # *** Diese Lektion funktioniert leider in Eclipse nicht 
-# *** Führe dieses Programm direkt in einem DOS-Fenster aus mit
-# *** c:\entwicklung> ruby lektion_07.rb
+# *** Führe dieses Programm direkt 
+#     o entweder in einem DOS-Fenster aus, wenn Du mit 
+#       Microsoft Windows arbeitest, mit:
+#         c:\entwicklung> ruby lektion_07.rb
+#     o oder in einem Terminal Fenster, wenn Du mit Linux arbeitest, mit:
+#         deinname@deincomputer:~/entwicklung$ ruby lektion_07.rb
 
 require File.dirname(__FILE__) +  "/rubykids"
 
