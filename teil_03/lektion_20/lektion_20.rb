@@ -1,10 +1,17 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
+# encoding: utf-8
+# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
 # Alle Rechte vorbehalten.
 # lektion_20.rb
 #
 puts "Schreibe Datei..."
 
-File.open("c:/herbarium/convolvulus_arvensis.txt", "w") do |datei|
+dateiname = "c:/herbarium/convolvulus_arvensis.txt"
+if RUBY_PLATFORM !~ /mswin/ then
+  # Kein Windowsbetriebssystem
+  dateiname = File.expand_path('~') + "/herbarium/convolvulus_arvensis.txt"
+end
+
+File.open(dateiname, "w") do |datei|
   datei.puts "Convolvulus arvensis L."
   datei.puts "Familie: Convolvulaceae"
   datei.puts "Ordnung: Solanales"
@@ -19,13 +26,13 @@ end
 
 puts "Lese gesamte Datei..."
 
-File.open("c:/herbarium/convolvulus_arvensis.txt", "r") do |datei|
+File.open(dateiname, "r") do |datei|
   puts datei.read
 end
 
 puts "Lese zeilenweise..."
 
-File.open("c:/herbarium/convolvulus_arvensis.txt", "r") do |datei|
+File.open(dateiname, "r") do |datei|
   datei.each do |zeile|
     puts zeile
   end
@@ -33,7 +40,7 @@ end
 
 puts "Verschiedene Codierungen..."
 
-File.open("c:/herbarium/convolvulus_arvensis.txt", "rb") do |file|
+File.open(dateiname, "rb") do |file|
   puts "\tDez\tHex\tOkt\tBin"
   puts "\t---\t---\t---\t---"
   while(b = file.getc)

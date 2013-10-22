@@ -1,4 +1,5 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
+# encoding: utf-8
+# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
 # Alle Rechte vorbehalten.
 # lektion_01.rb
 require File.dirname(__FILE__) +  "/rubykids"

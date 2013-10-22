@@ -1,11 +1,12 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
+# encoding: utf-8
+# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
 # Alle Rechte vorbehalten.
 # theorie_06_b.rb
 
 # Pulloverfarbe mit zwei Listen
 
 woche = ["Mo", "Di", "Mi", "Do", "Fr"]
-farbe = ["gelb", "blau", "pink", "rot", "gr�n"]
+farbe = ["gelb", "blau", "pink", "rot", "grün"]
 
 tag_zaehler = 0
 for tag in woche do
@@ -24,7 +25,7 @@ puts "Am " + such_tag + " ist die Farbe " + farbe[tag_zaehler] + "!"
 
 # Pulloverfarbe mit einer Liste
 
-pullover = ["Mo", "gelb", "Di", "blau", "Mi", "pink", "Do", "rot", "Fr", "gr�n"]
+pullover = ["Mo", "gelb", "Di", "blau", "Mi", "pink", "Do", "rot", "Fr", "grün"]
 
 tag_zaehler = 0
 1.upto(5) do
@@ -52,7 +53,7 @@ pullover = [
   ["Di", "blau"],
   ["Mi", "pink"],
   ["Do", "rot"],
-  ["Fr", "gr�n"],
+  ["Fr", "grün"],
 ]
 for paar in pullover do
   puts "Am " + paar[0] + " ist die Farbe " + paar[1]
@@ -74,7 +75,7 @@ pullover_hash = {
   "Di" => "blau", 
   "Mi" => "pink", 
   "Do" => "rot",
-  "Fr" => "gr�n",
+  "Fr" => "grün",
 }
 
 for tag in pullover_hash.keys do 

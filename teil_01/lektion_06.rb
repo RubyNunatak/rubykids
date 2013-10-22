@@ -7,7 +7,7 @@ require File.dirname(__FILE__) +  "/rubykids"
 richtung = "R" 
 
 if richtung == "R" then schreibe "Ich fahre nach rechts" end
-if richtung == "L":     schreibe "Ich fahre nach links" end
+if richtung == "L" then schreibe "Ich fahre nach links" end
   
 # if ... then ... else ... end
 if richtung == "R" 

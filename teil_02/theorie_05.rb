@@ -1,4 +1,5 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
+# encoding: utf-8
+# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
 # Alle Rechte vorbehalten.
 # theorie_05.rb
 require 'pp'
@@ -21,10 +22,10 @@ leere_liste = []
 # Einzelne Einkaufslisten
 tegut = ["Butter", "Milch", "Honig", "Brot"]
 obi   = ["Schrauben", "Leimholz", "Kabel", "Lampe"]
-dm    = ["Duschbad f�r Mama",    "Deo f�r Papa", 
-         "Haarspange f�r Livia", "Zahnb�rste f�r Peter"]
+dm    = ["Duschbad für Mama",    "Deo für Papa", 
+         "Haarspange für Livia", "Zahnbürste für Peter"]
 
-# Gesamte Einkaufsliste, enth�lt die einzelnen Listen
+# Gesamte Einkaufsliste, enthält die einzelnen Listen
 einkauf = [tegut, obi, dm]
 
 # Normale Ausgabe

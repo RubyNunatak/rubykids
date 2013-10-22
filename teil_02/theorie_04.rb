@@ -1,4 +1,5 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
+# encoding: utf-8
+# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
 # Alle Rechte vorbehalten.
 # theorie_04.rb
 
@@ -15,12 +16,12 @@ def kaffee_maschine(wasser, filter, pulver)
   puts "=> Fauchen und Dampf ablassen als Zeichen, dass ich fertig bin..." 
 
   # Fertigen Kaffee zurueckliefern
-  return "Bitte sch�n: Glaskanne mit #{wasser} leckerem Kaffee" 
+  return "Bitte schön: Glaskanne mit #{wasser} leckerem Kaffee" 
 end
 
 wasser = "2 Tassen (okay Papa kriegt auch eine)" 
 filter = "Kaffeefilter Groesse 4 (der aus dem Aldi)" 
-pulver = "Mhhmm, riecht das lecker. 2 L�ffel!" 
+pulver = "Mhhmm, riecht das lecker. 2 Löffel!" 
 
 kaffee_fuer_mama = kaffee_maschine(wasser, filter, pulver)
 

@@ -1,7 +1,11 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
+# encoding: utf-8
+# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
 # Alle Rechte vorbehalten.
-$KCODE='UTF-8'
-require 'jcode'
+if RUBY_VERSION < '1.9'
+  $KCODE='UTF-8'
+  require 'jcode'
+end
+
 begin
   require 'Win32API'
 rescue LoadError
@@ -31,7 +35,11 @@ end
 
 class String
   def laenge
-    self.jlength
+    if RUBY_VERSION < '1.9'
+      self.jlength
+    else
+      self.length
+    end
   end
   def buchstaben_klein
     self.downcase
@@ -77,7 +85,11 @@ end
 
 def schreib(*elemente)
   elemente.each do |t|
-    print t
+    if t.kind_of? Array
+      print t.join
+    else
+      print t
+    end
   end
 end
 
