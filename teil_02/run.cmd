@@ -20,10 +20,10 @@ for /f "tokens=1 delims==" %%i in ('chcp') do (
   set CP_OLD=!CP_OLD:~1,-1!
 )
 
-rem UTF-8 Codepage für Ausgabe setzen
+rem UTF-8 Codepage f?r Ausgabe setzen
 chcp %UTF8CP% > nul
 
-rem Gewünschte Lektion mit Ruby-Interpreter aufrufen
+rem Gew?nschte Lektion mit Ruby-Interpreter aufrufen
 ruby %LEKTION_PREFIX%%LEKTION_NR%.rb
 
 chcp %CP_OLD% > nul
@@ -53,5 +53,8 @@ echo   ruby %LEKTION_PREFIX%%example1%.rb
 echo   ruby %LEKTION_PREFIX%%example2%.rb
 echo   ruby %LEKTION_PREFIX%%example3%.rb
 echo.
+echo Wegen eines Bugs in Ruby 1.9.3 (UTF-8 mit Codepage 65001) darf die 
+echo Schriftart der DOS-Box unter Windows hier nicht auf 
+echo 'Rasterschriftart' stehen, sondern sollte auf 'Lucida' eingestellt sein.
 
 :end

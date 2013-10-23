@@ -33,7 +33,7 @@ endlocal
 goto end
 
 :usage
-echo.Ruft den Rubyinterpreter fuer eine Lektion auf (www.rubykids.de).
+echo Ruft den Rubyinterpreter fuer eine Lektion auf (www.rubykids.de).
 echo.
 echo run nn
 echo  nn - die Nummer einer Lektion
@@ -50,5 +50,8 @@ echo.
 echo   ruby %LEKTION_PREFIX%%example1%.rb
 echo   ruby %LEKTION_PREFIX%%example2%.rb
 echo.
+echo Wegen eines Bugs in Ruby 1.9.3 (UTF-8 mit Codepage 65001) darf die 
+echo Schriftart der DOS-Box unter Windows hier nicht auf 
+echo 'Rasterschriftart' stehen, sondern sollte auf 'Lucida' eingestellt sein.
 
 :end
