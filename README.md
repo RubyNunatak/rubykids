@@ -1,11 +1,11 @@
 Programmbeispiele von www.rubykids.de
-=====================================
+-------------------------------------
 
 Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
 Alle Rechte vorbehalten.
 
 Allgemeines
-===========
+-----------
 
 Die Programme lassen sich wie üblich von Konsole (MS-DOS Fenster, oder Linux Terminal) 
 aus starten oder in eine Entwicklungsumgebung importieren (bspw. Eclipse).
@@ -15,7 +15,7 @@ Ruby Quellecode Dateien umstellen: Window / Preferences / General / Content Type
 
 
 Anmerkungen zu Teil 1
-=====================
+---------------------
 
 Alle Lektionen im Teil 1 funktionieren korrekt, wenn sie direkt in einem DOS-Fenster (Windows), 
 bzw. im Terminalfenster (Linux) ausgeführt werden. 
