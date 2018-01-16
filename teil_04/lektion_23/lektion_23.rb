@@ -1,5 +1,3 @@
-# Copyright (C) 2007-2008 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_23.rb
 
 require 'fox16'
@@ -18,7 +16,7 @@ class LKW
     @col_ruecklicht = FXColor::Red
     @col_blinker    = FXColor::DarkOrange
   end
-  
+
   def draw(dc, pos = FXPoint.new(0,0))
     return if dc.nil?
     # Karosserie
@@ -35,7 +33,7 @@ class LKW
     dc.fillRectangle(pos.x+2,  pos.y+2, 15, 6) # Hinten
     dc.fillRectangle(pos.x+18, pos.y+2, 10, 6) # Vorne
 
-    # Mit Hintergrundfarbe einen Bereich für die 
+    # Mit Hintergrundfarbe einen Bereich für die
     # Räder aus der Karosse schneiden
     dc.foreground = @col_background
     dc.fillCircle(pos.x+8,  pos.y+20, 5) # Hinten
@@ -54,7 +52,7 @@ class LKW
     # Rücklicht
     dc.foreground = @col_ruecklicht
     dc.fillRectangle(pos.x-1, pos.y+10, 2, 6)
-    
+
     # Blinklicht vorne
     dc.foreground = @col_blinker
     dc.fillRectangle(pos.x+37, pos.y+12, 3, 2)
@@ -69,7 +67,7 @@ class RubykidsMainWindow < FXMainWindow
 
   def initialize(app)
     super(app, "Rubykids.de", :opts => DECOR_ALL, :width => 400, :height => 300)
-    
+
     @hauptFrame = FXHorizontalFrame.new(
       self,
       LAYOUT_SIDE_TOP|LAYOUT_FILL_X|LAYOUT_FILL_Y,
@@ -90,8 +88,8 @@ class RubykidsMainWindow < FXMainWindow
     )
 
     FXLabel.new(
-      @leinwandFrame, 
-      "Malbereich", 
+      @leinwandFrame,
+      "Malbereich",
       :opts => JUSTIFY_CENTER_X|LAYOUT_FILL_X
     )
 
@@ -111,8 +109,8 @@ class RubykidsMainWindow < FXMainWindow
     @leinwand.connect(SEL_RIGHTBUTTONPRESS, method(:onMouseDown))
     @leinwand.connect(SEL_MOUSEWHEEL, method(:onMouseWheel))
     @leinwand.connect(SEL_KEYPRESS, method(:onKeyPressed))
-    
-    
+
+
 
     # * * * Rechter Bereich für Buttons
     @menuFrame = FXVerticalFrame.new(
@@ -125,8 +123,8 @@ class RubykidsMainWindow < FXMainWindow
     )
 
     FXLabel.new(
-      @menuFrame, 
-      "Menü", 
+      @menuFrame,
+      "Menü",
       :opts => JUSTIFY_CENTER_X|LAYOUT_FILL_X
     )
 
@@ -142,7 +140,7 @@ class RubykidsMainWindow < FXMainWindow
       getApp(),
       FXApp::ID_QUIT,
       :opts => FRAME_THICK|FRAME_RAISED|LAYOUT_FILL_X|LAYOUT_TOP|LAYOUT_LEFT,
-      :padLeft   => 10, 
+      :padLeft   => 10,
       :padRight  => 10,
       :padTop    => 5,
       :padBottom => 5
@@ -186,7 +184,7 @@ class RubykidsMainWindow < FXMainWindow
       # Rechte Maustaste
       self.move_backward
     end
-  end  
+  end
 
   def onMouseWheel(sender, sel, event)
     if event.code > 0
@@ -237,11 +235,10 @@ class RubykidsMainWindow < FXMainWindow
     super
     show(PLACEMENT_SCREEN)
   end
-  
+
 end
 
 application = FXApp.new
     mainWin = RubykidsMainWindow.new(application)
 application.create
 application.run
-

@@ -1,5 +1,3 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_19.rb
 
 # Iterator einer Liste
@@ -13,7 +11,7 @@ eisenklumpen_container.each do |klumpen|
 end
 
 # bisher
-for klumpen in eisenklumpen_container do 
+for klumpen in eisenklumpen_container do
   puts "Erhitze den #{klumpen}..."
   puts "Schlage den #{klumpen} auf dem Amboss..."
   puts "... zu geschmeidigem Stahl."
@@ -26,7 +24,7 @@ deutsch_spanisch = {
   "zwei"   => "dos",
   "drei"   => "tres",
   "vier"   => "cuatro",
-  "fuenf"  => "cinco", 
+  "fuenf"  => "cinco",
   "sechs"  => "seis",
   "sieben" => "siete",
   "acht"   => "ocho",
@@ -100,18 +98,3 @@ end
 name = "Livia"
 
 sag_hallo.call
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

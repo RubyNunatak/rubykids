@@ -1,5 +1,3 @@
-# Copyright (C) 2007-2008 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_21.rb
 
 require 'fox16'
@@ -12,4 +10,3 @@ Fox::FXLabel.new(mainWin, "Hallo, Welt!")
 application.create
 mainWin.show(Fox::PLACEMENT_SCREEN)
 application.run
-

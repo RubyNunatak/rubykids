@@ -1,6 +1,4 @@
 # encoding: utf-8
-# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_14.rb
 
 require File.dirname(__FILE__) +  "/tictactoe_lektion_14"

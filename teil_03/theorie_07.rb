@@ -1,5 +1,3 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # theorie_07.rb
 
 # Klasse Tür
@@ -113,7 +111,7 @@ class Wohnhaus
     end
     res << "\n"
     res << "]"
-    
+
     res
   end
 end

@@ -1,5 +1,3 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_17.rb
 
 class Spieler
@@ -32,7 +30,7 @@ class Zug
   # Bestimmt aus der Nummer eines Feldes die Spalte und Zeile
   # Angenommen Spalte und Zeilen würden von 0 bis 2 gezählt werden.
   # Dann ergeben sich folgende Formeln:
-  # 
+  #
   # Spalte, Zeile => Nummer => Formel
   # ----------------------------------------
   # 0,0           => 1      => 0*1 + 0*3 + 1
@@ -112,37 +110,37 @@ class Spielfeld
   # links nach rechts und oben nach unten von 1 bis 9 fortlaufend
   # nummeriert.
   def print(aus)
-    aus.puts  "/-----------\\" 
-    aus.print "| " 
+    aus.puts  "/-----------\\"
+    aus.print "| "
 
     print_zeile(aus, 1)
 
-    aus.puts " |" 
-    aus.puts  "|---|---|---|" 
-    aus.print "| " 
+    aus.puts " |"
+    aus.puts  "|---|---|---|"
+    aus.print "| "
 
     print_zeile(aus, 2)
 
-    aus.puts " |" 
-    aus.puts  "|---|---|---|" 
-    aus.print "| " 
+    aus.puts " |"
+    aus.puts  "|---|---|---|"
+    aus.print "| "
 
     print_zeile(aus, 3)
 
-    aus.puts " |" 
-    aus.puts "\\-----------/" 
+    aus.puts " |"
+    aus.puts "\\-----------/"
   end
 
-  # Bestimmt den Status einer Reihe in der aktuellen Spielsituation. 
+  # Bestimmt den Status einer Reihe in der aktuellen Spielsituation.
   # Rückgabewerte sind eine Liste der besetzten und der freien Felder.
   # Die Liste der besetzten Felder ist aufgeteilt nach Spielern und
   # in einem Hash nach folgender Form organisiert:
   #
   #  besetzt = {
-  #    :o => Liste der von O besetzten Felder, 
+  #    :o => Liste der von O besetzten Felder,
   #    :x => Liste der von X besetzten Felder
   #  }
-  #   
+  #
   def reihen_status(reihe)
     # Welche Felder sind noch frei?
     frei_alle = freie_felder
@@ -152,7 +150,7 @@ class Spielfeld
         frei << feld
       end
     end
-    
+
     # Welche Felder sind vom wem besetzt? Da ist etwas mehr zu tun.
     besetzt = {}
     for s in [@spieler_o, @spieler_x]
@@ -175,23 +173,23 @@ class Spielfeld
     end
     frei
   end
-  
+
   # Schaut nach, ob alle Züge gemacht sind
   def felder_frei?
     @zuege.nil? ? true : @zuege.size < 9
   end
-  
+
   def Spielfeld.reihen
     @@reihen
   end
-  
+
   private
 
   # Methode zum Ausgeben einer einzigen Zeile im Ausgabebereich 'aus'.
   # Welche Zeile ausgegeben werden soll ist in 'zeile' übergeben.
   def print_zeile(aus, zeile)
     spalte = 1
-    1.upto(3) do 
+    1.upto(3) do
       print_feld(aus, spalte, zeile)
       aus.print " | " unless spalte == 3
       spalte += 1
@@ -203,7 +201,7 @@ class Spielfeld
   # oder es wird die laufende Nummer des Feldes ausgegeben, sofern
   # die Feldnummerierung angeschaltet ist.
   def print_feld(aus, spalte, zeile)
-    res = " " 
+    res = " "
     res = ((spalte-1)*1 + (zeile-1)*3 + 1) if @feldnummerierung
     # Den Zug suchen, der an dieser Stelle auszugeben ist.
     for zug in @zuege do
@@ -286,7 +284,7 @@ class TicTacToe
     else
       return nil
     end
-    
+
   end
 
   # Lässt 2 Spieler miteinander spielen
@@ -319,12 +317,12 @@ class TicTacToe
       return nil
     end
   end
-  
+
 
   def computer_zug(aktueller_spieler)
     @strategie.next(@spielfeld, aktueller_spieler)
   end
-  
+
 
   private
 
@@ -381,7 +379,7 @@ class SpielStrategie
     zug = Zug.new(aktueller_spieler, feld) if feld != nil
     zug
   end
-  
+
 end
 
 class LeichteSpielStrategie < SpielStrategie
@@ -390,7 +388,7 @@ class LeichteSpielStrategie < SpielStrategie
     naiver_zug(spielfeld, aktueller_spieler)
   end
 
-  def naiver_zug(spielfeld, aktueller_spieler) 
+  def naiver_zug(spielfeld, aktueller_spieler)
     frei = spielfeld.freie_felder
     zug = nil
     if frei.size > 0
@@ -419,11 +417,11 @@ class SchwereSpielStrategie < LeichteSpielStrategie
         break
       end
     end
-    
+
     # 1. Regel: Zuerst nach einer Gewinnsituation suchen
     for reihe in Spielfeld::reihen
       besetzt, frei = spielfeld.reihen_status(reihe)
-      
+
       # Wenn der aktuelle Spieler in einer Reihe bereits zwei Felder
       # besetzt hält und das dritte frei ist, dann natürlich das nehmen
       if (frei.size == 1) and (besetzt[aktueller_spieler].size == 2)
@@ -431,13 +429,13 @@ class SchwereSpielStrategie < LeichteSpielStrategie
         break # nicht weitersuchen
       end
     end
-    
+
     if zug.nil?
       # 2. Regel: Suche dann nach den Reihen, in denen der Gegner bereits
       # genau 2 Felder besetzt hat und das dritte Feld noch frei ist.
       for reihe in Spielfeld::reihen
         besetzt, frei = spielfeld.reihen_status(reihe)
-          
+
         # Gefährlich, wenn Gegner zwei besetzt hält. Wie in der vorherigen
         # Lektion gelernt, erhält man zum Index des aktuellen Spielers
         # in der Spielerliste den Index des Gegners mit der Bitoperation 1^wer
@@ -467,7 +465,7 @@ class SchwereSpielStrategie < LeichteSpielStrategie
         ecken[feld] = 1
       end
     end
-    
+
     # 3. Regel: Immer in die Mitte setzten, falls dort frei ist
     # Vorsicht vor der XOX Situation an der Diagonale!
     if zug.nil?
@@ -476,8 +474,8 @@ class SchwereSpielStrategie < LeichteSpielStrategie
       if frei.include?(mitte)
         zug = Zug.new(aktueller_spieler, mitte)
       else
-        # Aha, Mitte ist bereits besetzt. 
-        # Sofern sie vom aktuellen Spieler besetzt ist, dann nach der XOX 
+        # Aha, Mitte ist bereits besetzt.
+        # Sofern sie vom aktuellen Spieler besetzt ist, dann nach der XOX
         # Situation Ausschau halten und den nächsten Zug nicht in eine Ecke setzen.
         # XOX (oder OXO) Situation besteht, wenn
         # Ecke 1 und 9 vom Gegner besetzt und aktueller Spieler auf 5 oder
@@ -497,16 +495,16 @@ class SchwereSpielStrategie < LeichteSpielStrategie
               # Von den freien Ausweichfeldern zufällig eines nehmen
               feld = zufalls_feld(xox_felder)
               if feld != nil
-                zug = Zug.new(aktueller_spieler, feld) 
+                zug = Zug.new(aktueller_spieler, feld)
                 break
               end
             end
           end
         end
-        
+
       end
     end
-    
+
     # 4. Regel: Verteidige gegenüberliegende Ecke
     frei  = spielfeld.freie_felder
     if zug.nil?
@@ -535,8 +533,8 @@ class SchwereSpielStrategie < LeichteSpielStrategie
     if zug.nil?
       zug = zufalls_zug(spielfeld, aktueller_spieler)
     end
-    
+
     zug
   end
-  
+
 end

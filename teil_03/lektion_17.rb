@@ -1,5 +1,3 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_17.rb
 
 require File.dirname(__FILE__) +  "/tictactoe_lektion_17"
@@ -16,16 +14,3 @@ if gewinner == nil
 else
   puts "Der Gewinner ist #{gewinner}!"
 end
-
-
-
-
-
-
-
-
-
-
-
-
-

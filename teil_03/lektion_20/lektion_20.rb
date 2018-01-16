@@ -1,6 +1,4 @@
 # encoding: utf-8
-# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_20.rb
 #
 puts "Schreibe Datei..."
@@ -48,4 +46,3 @@ File.open(dateiname, "rb") do |file|
     puts "#{Regexp.escape(c)},\t#{b},\t0x#{b.to_s(16).upcase},\to#{b.to_s(8).upcase},\t#{b.to_s(2)}"
   end
 end
-

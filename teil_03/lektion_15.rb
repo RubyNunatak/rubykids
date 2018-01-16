@@ -1,5 +1,3 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_15.rb
 
 require File.dirname(__FILE__) +  "/tictactoe_lektion_15"

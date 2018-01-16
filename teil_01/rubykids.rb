@@ -1,6 +1,4 @@
 # encoding: utf-8
-# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 if RUBY_VERSION < '1.9'
   $KCODE='UTF-8'
   require 'jcode'

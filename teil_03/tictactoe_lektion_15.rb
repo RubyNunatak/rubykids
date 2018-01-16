@@ -1,5 +1,3 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # tictactoe.rb
 
 # Methode, die das Spielfeld im Ausgabebereich 'out' ausgibt
@@ -9,35 +7,35 @@
 # links nach rechts und oben nach unten von 1 bis 9 fortlaufend
 # nummeriert.
 def spielfeld(out, zuege)
-  out.puts  "/-----------\\" 
-  out.print "| " 
+  out.puts  "/-----------\\"
+  out.print "| "
 
   print_zeile(out, 1, zuege)
 
-  out.puts " |" 
-  out.puts  "|---|---|---|" 
-  out.print "| " 
+  out.puts " |"
+  out.puts  "|---|---|---|"
+  out.print "| "
 
   print_zeile(out, 2, zuege)
 
-  out.puts " |" 
-  out.puts  "|---|---|---|" 
-  out.print "| " 
+  out.puts " |"
+  out.puts  "|---|---|---|"
+  out.print "| "
 
   print_zeile(out, 3, zuege)
 
-  out.puts " |" 
-  out.puts "\\-----------/" 
+  out.puts " |"
+  out.puts "\\-----------/"
 end
 
 # Methode zum Ausgeben einer einzigen Zeile im Ausgabebereich 'out'.
 # Welche Zeile ausgegeben werden soll ist in 'zeile' übergeben.
 # Die Liste der Züge in 'zuege' brauchen wir hier, um das richtige
-# Symbol (X oder O) später in den Feldern ausgeben zu können, 
+# Symbol (X oder O) später in den Feldern ausgeben zu können,
 # oder die Nummer des Feldes.
 def print_zeile(out, zeile, zuege)
   spalte = 1
-  1.upto(3) do 
+  1.upto(3) do
     print_feld(spalte, zeile, zuege)
     out.print " | " unless spalte == 3
     spalte += 1
@@ -51,7 +49,7 @@ def print_feld(spalte, zeile, zuege)
   res = (spalte-1)*1 + (zeile-1)*3 + 1
   for z in zuege do
     if z[1] == spalte and z[2] == zeile
-      res = (z[0] == :x ? "X" : "O") 
+      res = (z[0] == :x ? "X" : "O")
       break
     end
   end
@@ -136,15 +134,15 @@ def the_winner_is(zuege)
       end
     end
 
-    # In felder_besetzt stehen die Felder, die vom aktuellen Spieler 
+    # In felder_besetzt stehen die Felder, die vom aktuellen Spieler
     # belegt sind. Die können wir nun für alle Reihen testen.
     for reihe in reihen
       gewonnen = true
       for feld in reihe
-        # gewonnen wird falsch (false), wenn das aktuelle Feld der 
+        # gewonnen wird falsch (false), wenn das aktuelle Feld der
         # Reihe nicht besetzt ist.
         gewonnen = (gewonnen and felder_besetzt.include?(feld))
-        break if gewonnen == false # in der Reihe kein Gewinn mehr 
+        break if gewonnen == false # in der Reihe kein Gewinn mehr
       end
       if gewonnen
         the_winner = spieler
@@ -152,9 +150,9 @@ def the_winner_is(zuege)
       end
     end
 
-    # Wenn es einen Gewinner gibt, für den nächsten gar nicht erst 
-    # mehr versuchen, denn dieser kann nicht auch gleichzeitig 
-    # gewonnen haben, das hätten wir beim vorherigen Zug bereits 
+    # Wenn es einen Gewinner gibt, für den nächsten gar nicht erst
+    # mehr versuchen, denn dieser kann nicht auch gleichzeitig
+    # gewonnen haben, das hätten wir beim vorherigen Zug bereits
     # bemerkt.
     break if the_winner != nil
   end
@@ -236,16 +234,16 @@ def freie_felder(zuege)
   frei
 end
 
-# Bestimmt den Status einer Reihe in der aktuellen Spielsituation. 
+# Bestimmt den Status einer Reihe in der aktuellen Spielsituation.
 # Rückgabewerte sind eine Liste der besetzten und der freien Felder.
 # Die Liste der besetzten Felder ist aufgeteilt nach Spielern und
 # in einem Hash nach folgender Form organisiert:
 #
 #  besetzt = {
-#    :o => Liste der von O besetzten Felder, 
+#    :o => Liste der von O besetzten Felder,
 #    :x => Liste der von X besetzten Felder
 #  }
-#   
+#
 def reihen_status(zuege, reihe)
   # Welche Felder sind noch frei?
   frei_alle = freie_felder(zuege)
@@ -255,7 +253,7 @@ def reihen_status(zuege, reihe)
       frei << feld
     end
   end
-  
+
   # Welche Felder sind vom wem besetzt? Da ist etwas mehr zu tun.
   besetzt = {:o => [], :x => []}
   for zug in zuege
@@ -293,13 +291,13 @@ def intelligenter_zug(zuege, spieler, wer)
     [1, 5, 9],
     [3, 5, 7],
   ]
-  
+
   zug = nil
-  
+
   # 1. Regel: Zuerst nach einer Gewinnsituation suchen
   for reihe in reihen
     besetzt, frei = reihen_status(zuege, reihe)
-    
+
     # Wenn der aktuelle Spieler in einer Reihe bereits zwei Felder
     # besetzt hält und das dritte frei ist, dann natürlich das nehmen
     if (frei.size == 1) and (besetzt[spieler[wer][0]].size == 2)
@@ -307,13 +305,13 @@ def intelligenter_zug(zuege, spieler, wer)
       break # nicht weitersuchen
     end
   end
-  
+
   if zug.nil?
     # 2. Regel: Suche dann nach den Reihen, in denen der Gegner bereits
     # genau 2 Felder besetzt hat und das dritte Feld noch frei ist.
     for reihe in reihen
       besetzt, frei = reihen_status(zuege, reihe)
-        
+
       # Gefährlich, wenn Gegner zwei besetzt hält. Wie in der vorherigen
       # Lektion gelernt, erhält man zum Index des aktuellen Spielers
       # in der Spielerliste den Index des Gegners mit der Bitoperation 1^wer
@@ -325,7 +323,7 @@ def intelligenter_zug(zuege, spieler, wer)
       end
     end
   end
-  
+
   # 3. Regel: Immer in die Mitte setzten, falls dort frei ist
   if zug.nil?
     frei  = freie_felder(zuege)
@@ -334,7 +332,7 @@ def intelligenter_zug(zuege, spieler, wer)
       zug = [spieler[wer][0], nummer_in_spalte_zeile(mitte)].flatten
     end
   end
-  
+
   # 4. Regel: Verteidige gegenüberliegende Ecke
   frei  = freie_felder(zuege)
   ecken = {
@@ -352,7 +350,7 @@ def intelligenter_zug(zuege, spieler, wer)
       ecken[feld] = 1
     end
   end
-  
+
   if zug.nil?
     # Wenn Ecke 1 besetzt, dann setze auf 9, oder umgekehrt (sofern frei).
     # Wenn Ecke 3 besetzt, dann setze auf 7, oder umgekehrt (sofern frei).
@@ -380,7 +378,7 @@ def intelligenter_zug(zuege, spieler, wer)
   if zug.nil?
     zug = zufalls_zug(zuege, spieler, wer)
   end
-  
+
   zug
 end
 
@@ -444,4 +442,3 @@ def play_gegen_computer(out, ein, zuege)
     return nil
   end
 end
-

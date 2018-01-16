@@ -1,6 +1,4 @@
 # encoding: utf-8
-# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # theorie_06_b.rb
 
 # Pulloverfarbe mit zwei Listen
@@ -14,7 +12,7 @@ for tag in woche do
   tag_zaehler = tag_zaehler + 1
 end
 
-such_tag = "Mi" 
+such_tag = "Mi"
 tag_zaehler = 0
 for tag in woche do
   break if tag == such_tag
@@ -36,20 +34,20 @@ tag_zaehler = 0
 end
 
 
-such_tag = "Mi" 
+such_tag = "Mi"
 tag_zaehler = 0
 1.upto(5) do
   break if pullover[tag_zaehler] == such_tag
   tag_zaehler = tag_zaehler + 2
 end
 
-puts "Am " + such_tag + " ist die Farbe " + pullover[tag_zaehler + 1] + "!" 
+puts "Am " + such_tag + " ist die Farbe " + pullover[tag_zaehler + 1] + "!"
 
 
 # Pulloverfarbe mit vielen Listen in einer Liste
 
 pullover = [
-  ["Mo", "gelb"], 
+  ["Mo", "gelb"],
   ["Di", "blau"],
   ["Mi", "pink"],
   ["Do", "rot"],
@@ -59,10 +57,10 @@ for paar in pullover do
   puts "Am " + paar[0] + " ist die Farbe " + paar[1]
 end
 
-such_tag = "Mi" 
+such_tag = "Mi"
 for paar in pullover do
   if paar[0] == such_tag
-    puts "Am " + such_tag + " ist die Farbe " + paar[1] + "!" 
+    puts "Am " + such_tag + " ist die Farbe " + paar[1] + "!"
     break
   end
 end
@@ -72,20 +70,16 @@ end
 
 pullover_hash = {
   "Mo" => "gelb",
-  "Di" => "blau", 
-  "Mi" => "pink", 
+  "Di" => "blau",
+  "Mi" => "pink",
   "Do" => "rot",
   "Fr" => "grün",
 }
 
-for tag in pullover_hash.keys do 
+for tag in pullover_hash.keys do
   puts "Am " + tag + " ist die Farbe " + pullover_hash[tag]
 end
 
 
-such_tag = "Mi" 
+such_tag = "Mi"
 puts "Am " + such_tag + " ist die Farbe " + pullover_hash[such_tag]
-
-
-
-

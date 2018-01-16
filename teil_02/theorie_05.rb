@@ -1,18 +1,16 @@
 # encoding: utf-8
-# Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # theorie_05.rb
 require 'pp'
 
 # Ein paar Listen anlegen
 zahlen_liste = [2, 4, 6, 8, 10]
 
-planeten_liste = 
+planeten_liste =
 [
-  "Merkur",  "Venus", 
-  "Erde",    "Mars", 
-  "Jupiter", "Saturn", 
-  "Uranus", "Neptun", 
+  "Merkur",  "Venus",
+  "Erde",    "Mars",
+  "Jupiter", "Saturn",
+  "Uranus", "Neptun",
 ]
 
 irgendwas_liste = ["Mars", 95, "95", "Quark"]
@@ -22,7 +20,7 @@ leere_liste = []
 # Einzelne Einkaufslisten
 tegut = ["Butter", "Milch", "Honig", "Brot"]
 obi   = ["Schrauben", "Leimholz", "Kabel", "Lampe"]
-dm    = ["Duschbad für Mama",    "Deo für Papa", 
+dm    = ["Duschbad für Mama",    "Deo für Papa",
          "Haarspange für Livia", "Zahnbürste für Peter"]
 
 # Gesamte Einkaufsliste, enthält die einzelnen Listen
@@ -48,8 +46,8 @@ deutsch_spanisch = {
   "drei"   => "tres",
   4        => "cuatro",
   "vier"   => "cuatro",
-  5        => "cinco", 
-  "fuenf"  => "cinco", 
+  5        => "cinco",
+  "fuenf"  => "cinco",
   6        => "seis",
   "sechs"  => "seis",
   7        => "siete",
@@ -85,7 +83,7 @@ de_esp = {
   "zwei"   => "dos",
   "drei"   => "tres",
   "vier"   => "cuatro",
-  "fuenf"  => "cinco", 
+  "fuenf"  => "cinco",
   "sechs"  => "seis",
   "sieben" => "siete",
   "acht"   => "ocho",
@@ -98,6 +96,3 @@ for key in de_esp.keys
     puts de_esp[key]
   end
 end
-
-
-

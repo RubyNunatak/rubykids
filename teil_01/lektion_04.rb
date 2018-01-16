@@ -1,22 +1,20 @@
-# Copyright (C) 2007 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_04.rb
 
 require File.dirname(__FILE__) +  "/rubykids"
 
-  schublade1           = "Hemden" 
+  schublade1           = "Hemden"
   anzahl_in_schublade1 = 5
 
-  schublade2           = "Hosen" 
+  schublade2           = "Hosen"
   anzahl_in_schublade2 = 7
 
-  die_kleine_schublade = "Socken" 
+  die_kleine_schublade = "Socken"
   anzahl_in_kleinen    = 10
 
-  RIESEN_SCHUBLADE     = "Mein Schrank" 
+  RIESEN_SCHUBLADE     = "Mein Schrank"
 
-  rot                  = "rot" 
-  text                 = " ist voll mit " 
+  rot                  = "rot"
+  text                 = " ist voll mit "
 
   # Einen Satz während der Ausgabe bilden
 
@@ -25,13 +23,13 @@ require File.dirname(__FILE__) +  "/rubykids"
   schreib  " und ", anzahl_in_schublade2, " ", schublade2
   schreibe " und #{anzahl_in_kleinen} ", rot, "en ", die_kleine_schublade
 
-  # Denselben Satz zunächst in einer Variablen speichern 
+  # Denselben Satz zunächst in einer Variablen speichern
   # und erst danach ausgeben, diesmal noch einen Punkt anhängen.
 
-  satz =  "#{RIESEN_SCHUBLADE}#{text}" 
-  satz << "#{anzahl_in_schublade1} #{schublade1}" 
-  satz << " und #{anzahl_in_schublade2} #{schublade2}" 
-  satz << " und #{anzahl_in_kleinen} #{rot}en #{die_kleine_schublade}" 
-  satz << "." 
+  satz =  "#{RIESEN_SCHUBLADE}#{text}"
+  satz << "#{anzahl_in_schublade1} #{schublade1}"
+  satz << " und #{anzahl_in_schublade2} #{schublade2}"
+  satz << " und #{anzahl_in_kleinen} #{rot}en #{die_kleine_schublade}"
+  satz << "."
 
   schreibe satz

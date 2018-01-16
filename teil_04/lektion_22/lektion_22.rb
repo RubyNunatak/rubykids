@@ -1,5 +1,3 @@
-# Copyright (C) 2007-2008 www.rubykids.de Frithjof Eckhardt
-# Alle Rechte vorbehalten.
 # lektion_22.rb
 
 require 'fox16'
@@ -10,7 +8,7 @@ include Fox
 class RubykidsMainWindow < FXMainWindow
   def initialize(app)
     super(app, "Rubykids.de", :opts => DECOR_ALL, :width => 800, :height => 600)
-    
+
     @hauptFrame = FXHorizontalFrame.new(
       self,
       LAYOUT_SIDE_TOP|LAYOUT_FILL_X|LAYOUT_FILL_Y,
@@ -31,8 +29,8 @@ class RubykidsMainWindow < FXMainWindow
     )
 
     FXLabel.new(
-      @leinwandFrame, 
-      "Malbereich", 
+      @leinwandFrame,
+      "Malbereich",
       :opts => JUSTIFY_CENTER_X|LAYOUT_FILL_X
     )
 
@@ -47,11 +45,11 @@ class RubykidsMainWindow < FXMainWindow
     )
 
     @leinwand.connect(
-      SEL_PAINT, 
+      SEL_PAINT,
       method(:onLeinwandRepaint)
     )
-    
-    
+
+
 
     # * * * Rechter Bereich für Buttons
     @menuFrame = FXVerticalFrame.new(
@@ -64,8 +62,8 @@ class RubykidsMainWindow < FXMainWindow
     )
 
     FXLabel.new(
-      @menuFrame, 
-      "Menü", 
+      @menuFrame,
+      "Menü",
       :opts => JUSTIFY_CENTER_X|LAYOUT_FILL_X
     )
 
@@ -81,7 +79,7 @@ class RubykidsMainWindow < FXMainWindow
       getApp(),
       FXApp::ID_QUIT,
       :opts => FRAME_THICK|FRAME_RAISED|LAYOUT_FILL_X|LAYOUT_TOP|LAYOUT_LEFT,
-      :padLeft   => 10, 
+      :padLeft   => 10,
       :padRight  => 10,
       :padTop    => 5,
       :padBottom => 5
@@ -105,7 +103,7 @@ class RubykidsMainWindow < FXMainWindow
       dc.fillRectangle(32, 22, 15, 6) # Hinten
       dc.fillRectangle(48, 22, 10, 6) # Vorne
 
-      # Mit Hintergrundfarbe einen Bereich für die 
+      # Mit Hintergrundfarbe einen Bereich für die
       # Räder aus der Karosse schneiden
       dc.foreground = FXColor::White
       dc.fillCircle(38, 40, 5) # Hinten
@@ -124,7 +122,7 @@ class RubykidsMainWindow < FXMainWindow
       # Rücklicht
       dc.foreground = FXColor::Red
       dc.fillRectangle(29, 30, 2, 6)
-      
+
       # Blinklicht vorne
       dc.foreground = FXColor::DarkOrange
       dc.fillRectangle(67, 32, 3, 2)
@@ -136,11 +134,10 @@ class RubykidsMainWindow < FXMainWindow
     super
     show(PLACEMENT_SCREEN)
   end
-  
+
 end
 
 application = FXApp.new
     mainWin = RubykidsMainWindow.new(application)
 application.create
 application.run
-

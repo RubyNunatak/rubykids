@@ -1,6 +1,4 @@
 @echo off
-rem Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
-rem Alle Rechte vorbehalten.
 
 if "%1"=="" goto usage
 SET LEKTION_PREFIX=theorie_
@@ -38,7 +36,7 @@ echo.
 echo run nn
 echo  nn - die Nummer einer Theorielektion
 echo.
-echo Beispiele: 
+echo Beispiele:
 set example1=05
 set example2=05_aufgaben
 set example3=06_a
@@ -47,14 +45,14 @@ echo   run %example1%
 echo   run %example2%
 echo   run %example3%
 echo.
-echo Ruft die Theorielektionen %example1%, %example2%, oder %example3% auf und entspricht den Befehlen: 
+echo Ruft die Theorielektionen %example1%, %example2%, oder %example3% auf und entspricht den Befehlen:
 echo.
 echo   ruby %LEKTION_PREFIX%%example1%.rb
 echo   ruby %LEKTION_PREFIX%%example2%.rb
 echo   ruby %LEKTION_PREFIX%%example3%.rb
 echo.
-echo Wegen eines Bugs in Ruby 1.9.3 (UTF-8 mit Codepage 65001) darf die 
-echo Schriftart der DOS-Box unter Windows hier nicht auf 
+echo Wegen eines Bugs in Ruby 1.9.3 (UTF-8 mit Codepage 65001) darf die
+echo Schriftart der DOS-Box unter Windows hier nicht auf
 echo 'Rasterschriftart' stehen, sondern sollte auf 'Lucida' eingestellt sein.
 
 :end
