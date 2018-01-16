@@ -1,8 +1,5 @@
-Programmbeispiele von www.rubykids.de
-=====================================
-
-Copyright (C) 2007-2013 www.rubykids.de Frithjof Eckhardt
-Alle Rechte vorbehalten.
+Programmbeispiele in Ruby
+=========================
 
 Allgemeines
 ===========
